@@ -51,7 +51,7 @@
                             <p class="card-text"><b>Bebida: </b>[[${menu.drink}]]</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <form th:action="@{/seleccionar-menu}" method="post">
-                                    <input type="hidden" name="menuID" th:value="${menu.ID}">
+                                    <input type="hidden" name="menuID" th:value="${menu.id}">
                                     <button type="submit" class="btn btn-lg btn-success">Seleccionar</button>
                                 </form>
                                 <p class="text-body-secondary">[[${menu.price}]]€</p>

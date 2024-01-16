@@ -1,5 +1,6 @@
 package com.wikicode.springboot.app.model.entity;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -13,11 +14,12 @@ import jakarta.persistence.Table;
 @Table(name = "menus")
 public class Menu implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ID;
+	private int id;
 
 	@Column(name = "main")
 	private String main;
@@ -47,12 +49,12 @@ public class Menu implements Serializable {
 		this.img = img;
 	}
 
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int iD) {
+		id = iD;
 	}
 
 	public String getMain() {

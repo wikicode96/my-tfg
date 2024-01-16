@@ -1,5 +1,6 @@
 package com.wikicode.springboot.app.model.entity;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import jakarta.persistence.Column;
@@ -13,11 +14,12 @@ import jakarta.persistence.Table;
 @Table(name = "employers")
 public class Employer implements Serializable {
 
+	@Serial
 	private static final long serialVersionUID = 1L;
 
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ID;
+    private int id;
     
     @Column(name = "DNI", nullable = false, unique = true)
     private String dni;
@@ -29,17 +31,17 @@ public class Employer implements Serializable {
 
 	}
     
-	public Employer(int iD, String dni, String password) {
+	public Employer(String dni, String password) {
 		this.dni = dni;
 		this.password = password;
 	}
 
-	public int getID() {
-		return ID;
+	public int getId() {
+		return id;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int iD) {
+		id = iD;
 	}
 
 	public String getDni() {

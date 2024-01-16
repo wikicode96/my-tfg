@@ -42,7 +42,7 @@ public class ClienteController {
 	    Order newOrder = new Order();
 	    Menu menu = new Menu();
 	    
-	    menu.setID(menuID);
+	    menu.setId(menuID);
 	    newOrder.setIdentifier(clientID);
 	    newOrder.setMenu(menu);
 	    

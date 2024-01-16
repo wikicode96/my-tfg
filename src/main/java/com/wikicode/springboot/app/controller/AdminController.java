@@ -25,18 +25,18 @@ public class AdminController {
 	public String admin(Model model) {
 
 		List<Order> allOrders = employerService.findAllOrders();
-		List<OrderTableField> OrdersTable = new ArrayList<>();
+		List<OrderTableField> ordersTable = new ArrayList<>();
 		
 		for (Order i : allOrders) {
 			
 			Menu menu = i.getMenu();
 			
-			OrderTableField orderTableField = new OrderTableField(i.getID(), menu.getMain(), menu.getSide(), menu.getDrink(), i.getIdentifier());
+			OrderTableField orderTableField = new OrderTableField(i.getId(), menu.getMain(), menu.getSide(), menu.getDrink(), i.getIdentifier());
 			
-			OrdersTable.add(orderTableField);
+			ordersTable.add(orderTableField);
 		}
 		
-		model.addAttribute("orders", OrdersTable);
+		model.addAttribute("orders", ordersTable);
 		
 		return "ordersview";
 		
